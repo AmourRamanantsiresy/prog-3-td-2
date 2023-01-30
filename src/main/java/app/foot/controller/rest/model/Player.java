@@ -1,4 +1,4 @@
-package app.foot.controller.rest;
+package app.foot.controller.rest.model;
 
 import lombok.*;
 
@@ -8,6 +8,7 @@ import lombok.*;
 @Builder(toBuilder = true)
 @ToString
 @EqualsAndHashCode
+@Setter
 public class Player {
     private Integer id;
     private String name;

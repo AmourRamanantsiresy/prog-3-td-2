@@ -1,6 +1,6 @@
 package unit;
 
-import app.foot.controller.validator.GoalValidator;
+import app.foot.controller.rest.validator.GoalValidator;
 import app.foot.exception.BadRequestException;
 import org.junit.jupiter.api.Test;
 

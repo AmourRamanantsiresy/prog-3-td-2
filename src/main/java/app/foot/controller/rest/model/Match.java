@@ -1,4 +1,4 @@
-package app.foot.controller.rest;
+package app.foot.controller.rest.model;
 
 import java.time.Instant;
 import lombok.AllArgsConstructor;

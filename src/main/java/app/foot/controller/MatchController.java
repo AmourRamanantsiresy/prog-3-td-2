@@ -1,10 +1,10 @@
 package app.foot.controller;
 
-import app.foot.controller.rest.Match;
-import app.foot.controller.rest.PlayerScorer;
+import app.foot.controller.rest.model.Match;
+import app.foot.controller.rest.model.PlayerScorer;
 import app.foot.controller.rest.mapper.MatchRestMapper;
 import app.foot.controller.rest.mapper.PlayerScorerRestMapper;
-import app.foot.controller.validator.GoalValidator;
+import app.foot.controller.rest.validator.GoalValidator;
 import app.foot.service.MatchService;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -29,6 +29,11 @@ public class MatchController {
     return service.getMatches().stream()
         .map(mapper::toRest)
         .toList();
+  }
+
+  @GetMapping("/matches/{matchId}")
+  public Match getMatchById(@PathVariable int matchId){
+    return mapper.toRest(service.getMatchById(matchId));
   }
 
   @PostMapping("/matches/{matchId}/goals")

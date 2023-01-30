@@ -1,7 +1,7 @@
 package utils;
 
-import app.foot.controller.rest.Player;
-import app.foot.controller.rest.PlayerScorer;
+import app.foot.controller.rest.model.Player;
+import app.foot.controller.rest.model.PlayerScorer;
 import app.foot.model.Team;
 import app.foot.repository.entity.PlayerEntity;
 import app.foot.repository.entity.PlayerScoreEntity;
@@ -96,6 +96,13 @@ public class TestUtils {
                 .name("Barea")
                 .build();
     }
+
+
+    public static String TeamEntityName1 = "E1";
+    public static String Player_new_name = "Player-new-name";
+    public static String UnknownTeamEntityName = "UnknownTeamEntityName";
+    public static int Status_Code_Not_Found = 404;
+    public static int Status_Code_Bad_Request = 400;
 
     public static void assertThrowsExceptionMessage(String message, Class exceptionClass, Executable executable) {
         Throwable exception = assertThrows(exceptionClass, executable);

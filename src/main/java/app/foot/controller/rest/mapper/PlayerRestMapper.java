@@ -1,6 +1,6 @@
 package app.foot.controller.rest.mapper;
 
-import app.foot.controller.rest.Player;
+import app.foot.controller.rest.model.Player;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
