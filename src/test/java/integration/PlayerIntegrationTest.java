@@ -24,6 +24,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static utils.TestUtils.Player_new_name;
 import static utils.TestUtils.UnknownTeamEntityName;
 import static utils.TestUtils.TeamEntityName1;
+import static utils.TestUtils.createPlayer;
 
 @SpringBootTest(classes = FootApi.class)
 @AutoConfigureMockMvc
@@ -32,14 +33,6 @@ public class PlayerIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-    Player createPlayer(int playerId, boolean isGuardian){
-        return Player.builder()
-                .id(playerId)
-                .name("J" + playerId)
-                .isGuardian(isGuardian)
-                .build();
-    }
 
     Player player1() { return createPlayer(1, false); }
     Player player2() { return createPlayer(2, false); }

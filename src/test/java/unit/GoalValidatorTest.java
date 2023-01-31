@@ -19,7 +19,7 @@ public class GoalValidatorTest {
     //Mandatory attributes not provided : scoreTime
     @Test
     void accept_ko() {
-        assertThrowsExceptionMessage("400 BAD_REQUEST : Score minute is mandatory.",
+        assertThrowsExceptionMessage("Score minute is mandatory. ",
                 BadRequestException.class, () -> subject.accept(nullScoreTimeScorer()));
     }
 
