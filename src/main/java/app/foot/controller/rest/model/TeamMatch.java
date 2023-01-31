@@ -6,12 +6,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
 @EqualsAndHashCode
+@ToString
 public class TeamMatch {
   private Team team;
   private Integer score;

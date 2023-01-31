@@ -24,7 +24,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static utils.TestUtils.Player_new_name;
 import static utils.TestUtils.UnknownTeamEntityName;
 import static utils.TestUtils.TeamEntityName1;
-import static utils.TestUtils.Status_Code_Bad_Request;
 
 @SpringBootTest(classes = FootApi.class)
 @AutoConfigureMockMvc
@@ -118,7 +117,7 @@ public class PlayerIntegrationTest {
         Exception actual = objectMapper.readValue(response.getContentAsString(), Exception.class);
         Exception expected = Exception.builder()
                 .message("Team#" + UnknownTeamEntityName + " does not exist")
-                .status(Status_Code_Bad_Request)
+                .status(HttpStatus.BAD_REQUEST.value())
                 .error(HttpStatus.BAD_REQUEST)
                 .build();
 
@@ -158,7 +157,7 @@ public class PlayerIntegrationTest {
         Exception actual = objectMapper.readValue(response.getContentAsString(), Exception.class);
         Exception expected = Exception.builder()
                 .message("All player need id")
-                .status(Status_Code_Bad_Request)
+                .status(HttpStatus.BAD_REQUEST.value())
                 .error(HttpStatus.BAD_REQUEST)
                 .build();
 

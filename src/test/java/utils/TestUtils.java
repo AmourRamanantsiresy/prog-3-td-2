@@ -98,11 +98,10 @@ public class TestUtils {
     }
 
 
-    public static String TeamEntityName1 = "E1";
-    public static String Player_new_name = "Player-new-name";
-    public static String UnknownTeamEntityName = "UnknownTeamEntityName";
-    public static int Status_Code_Not_Found = 404;
-    public static int Status_Code_Bad_Request = 400;
+    public final static String TeamEntityName1 = "E1";
+    public final static String Player_new_name = "Player-new-name";
+    public final static String UnknownTeamEntityName = "UnknownTeamEntityName";
+    public static int Not_Found_Match_Id = 0;
 
     public static void assertThrowsExceptionMessage(String message, Class exceptionClass, Executable executable) {
         Throwable exception = assertThrows(exceptionClass, executable);

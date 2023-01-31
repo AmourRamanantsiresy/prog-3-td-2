@@ -79,6 +79,29 @@ paths:
             schema:
               type: array
               items:
+                $ref: '#/components/schemas/CreatePlayer'
+      responses:
+        '200':
+          description: The updated match with new scores
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Player'
+    put:
+      tags:
+        - players
+      summary: Edit some players
+      description: | 
+        edit players, the player id is mandatory
+      operationId: editPlayers
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
                 $ref: '#/components/schemas/Player'
       responses:
         '200':
@@ -102,6 +125,10 @@ components:
       properties:
         id:
           type: integer
+        allOf:
+          $ref: "#/components/schemas/CreatePlayer"
+    CreatePlayer:
+      properties:
         name:
           type: string
         isGuardian:
