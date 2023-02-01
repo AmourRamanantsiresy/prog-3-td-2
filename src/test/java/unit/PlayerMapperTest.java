@@ -75,7 +75,7 @@ public class PlayerMapperTest {
         PlayerEntity expected = playerEntityRakoto(teamEntityBarea());
         app.foot.controller.rest.model.Player rest = playerModel1();
         when(teamRepositoryMock.findByName("Barea")).thenReturn(teamEntityBarea());
-        PlayerEntity actual = subject.toDomain(rest, "Barea");
+        PlayerEntity actual = subject.toEntity(rest, "Barea");
         assertEquals(expected, actual);
     }
 
@@ -85,7 +85,7 @@ public class PlayerMapperTest {
         when(teamRepositoryMock.findByName(UnknownTeamEntityName)).thenReturn(null);
 
         assertThrowsExceptionMessage("Team#" + UnknownTeamEntityName + " does not exist", BadRequestException.class, () -> {
-            subject.toDomain(rest, UnknownTeamEntityName);
+            subject.toEntity(rest, UnknownTeamEntityName);
         });
     }
 

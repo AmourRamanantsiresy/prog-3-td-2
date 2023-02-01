@@ -29,7 +29,7 @@ public class PlayerMapper {
                 .build();
     }
 
-    public PlayerEntity toDomain(app.foot.controller.rest.model.Player player, String teamName) {
+    public PlayerEntity toEntity(app.foot.controller.rest.model.Player player, String teamName) {
         TeamEntity team = teamRepository.findByName(teamName);
         if (team == null) {
             throw new BadRequestException("Team#" + teamName + " does not exist");

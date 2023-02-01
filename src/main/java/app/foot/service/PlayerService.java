@@ -25,7 +25,7 @@ public class PlayerService {
 
     public List<Player> addPlayer(List<app.foot.controller.rest.model.Player> players, String teamName){
         List<PlayerEntity> mappedPlayer = players.stream()
-                        .map(player -> mapper.toDomain(player, teamName))
+                        .map(player -> mapper.toEntity(player, teamName))
                         .toList();
         return repository.saveAll(mappedPlayer).stream()
                 .map(mapper::toDomain)
